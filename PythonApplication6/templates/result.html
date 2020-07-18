@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Result </title>
+        <style>
+            body, html {
+                height: 100%;
+            }
+
+            .bg { 
+                background-image: url('static/images/background_1.jpg');
+                height: 100%; 
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            .button {
+                background-color: white;
+                border-color: #dbdbdb;
+                border-width: 1px;
+                color: #363636;
+                cursor: pointer;
+                justify-content: center;
+                padding-bottom: calc(0.375em - 1px);
+                padding-left: 0.75em;
+                padding-right: 0.75em;
+                padding-top: calc(0.375em - 1px);
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .button.is-primary {
+                background-color: #00d1b2;
+                border-color: transparent;
+                color: #fff;
+            }
+            .button.is-rounded {
+                border-radius: 290486px;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="task-container columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <br><br><br>
+                    <h2 class="heading" style="font-size: 40px; text-align: center; color:rgb(14, 230, 212); font-family:'Times New Roman'"> AUTOMATIC OPINION MINING OF STUDENTS SPEECH ABOUT EDUCATIONAL INSTITUTIONS</h2>
+                    <br>
+                    <div style="text-align: center;">
+                        <form action="http://localhost:5000/predict" method="POST">
+                            <label class="label" style="font-size: 25px; color:rgb(154, 235, 235); font-family:'Times New Roman'"> Tect detected from audio </label>
+                            <br>
+                            <textarea name="spoken_text" id="spoken_text" cols="40" rows="15"> {{ audio_text }} </textarea>
+                            <div class="field is-grouped is-grouped-centered">
+                                <p class="control">
+                                    <input type="submit" class="button is-primary is-rounded" value="predict" name="record_state" style="font-size: 25px">
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

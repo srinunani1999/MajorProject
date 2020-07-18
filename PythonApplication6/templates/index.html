@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Student Feedback</title>
+        <script type = "text/stylesheet" src="{{ url_for('static', filename = 'bulma/css/style.css') }}" ></script>
+        <style>
+            body, html {
+                height: 100%;
+            }
+
+            .bg { 
+                background-image: url('static/images/background_1.jpg');
+                height: 100%; 
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .button {
+                background-color: white;
+                border-color: #dbdbdb;
+                border-width: 1px;
+                color: #363636;
+                cursor: pointer;
+                justify-content: center;
+                padding-bottom: calc(0.375em - 1px);
+                padding-left: 0.75em;
+                padding-right: 0.75em;
+                padding-top: calc(0.375em - 1px);
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .button.is-primary {
+                background-color: #00d1b2;
+                border-color: transparent;
+                color: #fff;
+            }
+            .button.is-rounded {
+                border-radius: 290486px;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="task-container columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <br><br><br><br><br><br><br>
+                    <h2 class="heading" style="font-size: 40px; text-align: center; color:rgb(14, 230, 212); font-family:'Times New Roman'"> AUTOMATIC OPINION MINING OF STUDENTS SPEECH ABOUT EDUCATIONAL INSTITUTIONS</h2>
+                    <br>
+                    <div style="text-align: center;">
+                        <form action="http://localhost:5000/recording" method="POST" enctype="multipart/form-data">
+                            <input type="submit" class="button is-primary is-rounded" value="{{button_name}}" name="record_state" style="font-size: 25px">
+                            <!-- <button class="button is-primary is-rounded" type="submit" name="record_state"></button> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

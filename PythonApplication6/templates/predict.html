@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Resources -->
+        <script src="https://www.amcharts.com/lib/4/core.js"></script>
+        <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/material.js"></script>
+        <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+        <style>
+        #chartdiv {
+            width: 100%;
+            height: 500px;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        .bg { 
+            background-image: url('static/images/background_1.jpg');
+            height: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .button {
+            background-color: white;
+            border-color: #dbdbdb;
+            border-width: 1px;
+            color: #363636;
+            cursor: pointer;
+            justify-content: center;
+            padding-bottom: calc(0.375em - 1px);
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+            padding-top: calc(0.375em - 1px);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .button.is-primary {
+            background-color: #00d1b2;
+            border-color: transparent;
+            color: #fff;
+        }
+        .button.is-rounded {
+            border-radius: 290486px;
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="bg">
+            <div class="task-container columns">
+                <div class="column is-half is-offset-one-quarter">
+                    <br><br><br>
+                    <h2 class="heading" style="font-size: 40px; text-align: center; color:rgb(14, 230, 212); font-family:'Times New Roman'"> AUTOMATIC OPINION MINING OF STUDENTS SPEECH ABOUT EDUCATIONAL INSTITUTIONS</h2>
+                    <br>
+                    <div style="text-align: center;">
+                        <form action="http://localhost:5000/feedback">
+                            <h3 style="font-size: 25px; text-align: center; color:rgb(14, 230, 212); font-family:'Times New Roman'"> Polarity Check </h3>
+                            <div id="chartdiv"></div>
+                            <input type="submit" value="Go Back">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            am4core.ready(function() {
+            
+            // Themes begin
+            am4core.useTheme(am4themes_material);
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+            
+            // Create chart
+            var chart = am4core.create("chartdiv", am4charts.PieChart);
+            chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+            
+            chart.data = {{data|safe}};
+            var series = chart.series.push(new am4charts.PieSeries());
+            series.dataFields.value = "value";
+            series.dataFields.radiusValue = "value";
+            series.dataFields.category = "sentiment";
+            series.slices.template.cornerRadius = 6;
+            series.colors.step = 3;
+            
+            series.hiddenState.properties.endAngle = -90;
+            
+            chart.legend = new am4charts.Legend();
+            
+            }); // end am4core.ready()
+            </script>
+    </body>
+</html>

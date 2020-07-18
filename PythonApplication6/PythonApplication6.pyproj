@@ -1,0 +1,107 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>492b2577-3b93-4fd6-969e-0bf81783db84</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>PythonApplication6.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>PythonApplication6</Name>
+    <RootNamespace>PythonApplication6</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="PythonApplication6.py" />
+    <Compile Include="views\audio.py" />
+    <Compile Include="views\nltk.py" />
+    <Compile Include="views\sentiment_nb.py" />
+    <Compile Include="views\sentiment_svc.py" />
+    <Compile Include="__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ML\" />
+    <Folder Include="ML\data\" />
+    <Folder Include="ML\notebooks\" />
+    <Folder Include="ML\notebooks\.ipynb_checkpoints\" />
+    <Folder Include="static\" />
+    <Folder Include="static\bulma\" />
+    <Folder Include="static\bulma\css\" />
+    <Folder Include="static\bulma\sass\" />
+    <Folder Include="static\images\" />
+    <Folder Include="static\others\" />
+    <Folder Include="templates\" />
+    <Folder Include="views\" />
+    <Folder Include="views\data\" />
+    <Folder Include="views\__pycache__\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ML\data\._current_data.csv" />
+    <Content Include="ML\data\._Evaluations-Binary.csv" />
+    <Content Include="ML\data\._Evaluations-Binary2_partially_labelled.csv" />
+    <Content Include="ML\data\._rmp.csv" />
+    <Content Include="ML\data\._scrapped_data_rmp.csv" />
+    <Content Include="ML\data\._train_sentiment.csv" />
+    <Content Include="ML\data\current_data.csv" />
+    <Content Include="ML\data\Evaluations-Binary.csv" />
+    <Content Include="ML\data\Evaluations-Binary2_partially_labelled.csv" />
+    <Content Include="ML\data\rmp.csv" />
+    <Content Include="ML\data\scrapped_data_rmp.csv" />
+    <Content Include="ML\data\train_sentiment.csv" />
+    <Content Include="ML\LICENSE" />
+    <Content Include="ML\notebooks\.ipynb_checkpoints\Classifier_SVC-checkpoint.ipynb" />
+    <Content Include="ML\notebooks\.ipynb_checkpoints\NB_Classifier-checkpoint.ipynb" />
+    <Content Include="ML\notebooks\.ipynb_checkpoints\ProfEvalsIR-checkpoint.ipynb" />
+    <Content Include="ML\notebooks\._Classifier_SVC.ipynb" />
+    <Content Include="ML\notebooks\._NB_Classifier.ipynb" />
+    <Content Include="ML\notebooks\._NB_Classifier_tb.ipynb" />
+    <Content Include="ML\notebooks\._ProfEvalsIR.ipynb" />
+    <Content Include="ML\notebooks\._RateMyProfessors Scraping.ipynb" />
+    <Content Include="ML\notebooks\Classifier_SVC.ipynb" />
+    <Content Include="ML\notebooks\NB_Classifier.ipynb" />
+    <Content Include="ML\notebooks\NB_Classifier_tb.ipynb" />
+    <Content Include="ML\notebooks\ProfEvalsIR.ipynb" />
+    <Content Include="ML\notebooks\RateMyProfessors Scraping.ipynb" />
+    <Content Include="ML\README.md" />
+    <Content Include="static\bulma\css\style.css" />
+    <Content Include="static\bulma\css\style.css.map" />
+    <Content Include="static\bulma\css\style.min.css" />
+    <Content Include="static\bulma\sass\.gitignore" />
+    <Content Include="static\bulma\sass\package-lock.json" />
+    <Content Include="static\bulma\sass\package.json" />
+    <Content Include="static\bulma\sass\style.sass" />
+    <Content Include="static\images\background_1.jpg" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\predict.html" />
+    <Content Include="templates\result.html" />
+    <Content Include="views\audio_file.wav" />
+    <Content Include="views\data\Evaluations-Binary.csv" />
+    <Content Include="views\__pycache__\audio.cpython-36.pyc" />
+    <Content Include="views\__pycache__\audio.cpython-38.pyc" />
+    <Content Include="views\__pycache__\nltk.cpython-36.pyc" />
+    <Content Include="views\__pycache__\nltk.cpython-38.pyc" />
+    <Content Include="views\__pycache__\sentiment.cpython-36.pyc" />
+    <Content Include="views\__pycache__\sentiment_nb.cpython-36.pyc" />
+    <Content Include="views\__pycache__\sentiment_nb.cpython-38.pyc" />
+    <Content Include="views\__pycache__\sentiment_svc.cpython-36.pyc" />
+    <Content Include="views\__pycache__\sentiment_svc.cpython-38.pyc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
